@@ -34,16 +34,14 @@ jobs:
 
       # Install node on runner
       - name: Install Node
-        uses:  actions/setup-node@v3
-        with: 
-        node-version: '16.x'
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16.x'
 
       # Install newman
       - name: Install Node
-         run: |
-        npm install -g newman
-        npm install -g newman-reporter-slackreporter
-        npm install -g newman-reporter-htmlextra
-
+         run:| 
+         npm install -g newman npm install -g newman-reporter-slackreporter npm install -g newman-reporter-htmlextra
+        
       - name: Run Tests
-      run: newman run "api.json"
+        run: newman run "api.json"
